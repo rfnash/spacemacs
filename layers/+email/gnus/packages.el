@@ -22,7 +22,7 @@
     :config
     (progn
     ;; No primary server:
-    (setq gnus-select-method '(nnnil ""))
+    ;; (setq gnus-select-method '(nnnil ""))
 
     ; Use topics per default:
     (add-hook 'gnus-group-mode-hook 'gnus-topic-mode)
@@ -48,7 +48,7 @@
         gnus-sum-thread-tree-root ""
         gnus-sum-thread-tree-single-leaf "╰► "
         gnus-sum-thread-tree-vertical "│"
-        gnus-article-browse-delete-temp t
+        gnus-article-browse-delete-temp nil
         gnus-fetch-old-headers t
         gnus-treat-strip-trailing-blank-lines 'last
         gnus-keep-backlog 'nil
@@ -75,11 +75,9 @@
         (gnus-summary-scroll-up arg))))
     (add-to-list 'nnmail-extra-headers nnrss-url-field)
 
-    (evilify gnus-group-mode gnus-group-mode-map)
+    (evilify gnus-group-mode gnus-group-mode-map
+               (kbd "l") #'gnus-group-list-groups)
+    (evilify gnus-group-mode gnus-group-mode-map
+             (kbd "g") #'gnus-group-get-new-news)
     (evilify gnus-server-mode gnus-server-mode-map)
-    (evilify gnus-browse-mode gnus-browse-mode-map)
-    (evilify gnus-article-mode gnus-article-mode-map)
-    (evilify gnus-summary-mode gnus-summary-mode-map
-      (kbd "J") 'gnus-summary-next-article
-      (kbd "K") 'gnus-summary-prev-article
-      (kbd "<RET>") 'spacemacs/browse-nnrss-url))))
+    (evilify gnus-browse-mode gnus-browse-mode-map))))
