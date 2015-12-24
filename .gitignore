@@ -1,5 +1,6 @@
 auto-save-list/
 elpa/
+quelpa/
 export/
 !/core/tools/export/
 ac-comphist.dat
@@ -19,6 +20,7 @@ my-org/
 org-files/
 semanticdb/
 edts/
+recentf
 .recentf
 .recentf~
 projectile.cache
@@ -55,3 +57,9 @@ private/
 /games/
 /doc/COMMUNITY.org
 /doc/CONTRIBUTING.org
+
+# Misc
+.org-id-locations
+places
+request/curl-cookie-jar
+mydoc/
