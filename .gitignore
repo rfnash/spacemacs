@@ -1,5 +1,6 @@
 auto-save-list/
 elpa/
+quelpa/
 ac-comphist.dat
 eproject.lst
 .smex-items
@@ -45,3 +46,9 @@ private/*
 !private/snippets/README.md
 !private/local/README.md
 /games/
+
+# Misc
+.org-id-locations
+places
+request/curl-cookie-jar
+mydoc/
